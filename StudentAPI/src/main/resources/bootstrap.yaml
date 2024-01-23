@@ -1,0 +1,13 @@
+server:
+  port: 8091
+spring:
+  application:
+    name: student-service
+  cloud:
+    consul:
+      config:
+        enabled: true
+        default-context: application
+        prefixes: config
+        profile-separator: '::'
+        format: YAML

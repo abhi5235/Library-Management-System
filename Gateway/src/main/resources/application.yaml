@@ -1,0 +1,22 @@
+server:
+  port: 9090
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          
+      routes:
+      - id: student-service
+        uri: lb://student-service
+        predicates:
+        - Path=/student/**
+      - id: book-service
+        uri: lb://book-service
+        predicates:
+        - Path=/book/**
+  application:
+    name: Gateway   
+            
+              
