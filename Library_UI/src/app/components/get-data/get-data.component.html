@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="innerContainer">
+        <form (ngSubmit)="getBookData()">
+            <h1>Click here to Fetch Student Data</h1>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Book Id</mat-label>
+                <input name="bookId" [(ngModel)]="bookId" matInput>
+            </mat-form-field>
+
+            <div class="submitbutton">
+                <button type="submit" mat-raised-button color="primary">Submit</button>
+                <button type="reset" mat-raised-button color="primary">Reset</button>
+            </div>
+        </form>
+        <div class="container">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>bookId</th>
+                        <th>bookName</th>
+                        <th>authorName</th>
+                        <th>issuedTo</th>
+                        <th>issuedDate</th>
+                        <th>availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="bookfetched">
+                        <td><span>{{bookfetched.bookId}}</span></td>
+                        <td><span>{{bookfetched.bookName}}</span></td>
+                        <td><span>{{bookfetched.authorName}}</span></td>
+                        <td><span>{{bookfetched.issuedTo}}</span></td>
+                        <td><span>{{bookfetched.issuedDate}}</span></td>
+                        <td><span>{{bookfetched.availability}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

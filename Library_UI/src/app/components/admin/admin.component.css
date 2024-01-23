@@ -1,0 +1,16 @@
+.field{
+    width: 100%;
+   }
+   .innerContainer{
+       width: 50%;
+       margin: auto;
+   }
+   .innerContainer h1{
+       text-align: center;
+   }
+   .submitbutton{
+       text-align: center;
+   }
+   .innerContainer button{
+       margin: 5px;
+   }

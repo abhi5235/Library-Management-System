@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="innerContainer">
+        <form (ngSubmit)="getStudentData()">
+            <h1>Click here to Fetch Student Data</h1>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Student Id</mat-label>
+                <input name="studentId" [(ngModel)]="studentId" matInput>
+            </mat-form-field>
+
+            <div class="submitbutton">
+                <button type="submit" mat-raised-button color="primary">Submit</button>
+                <button type="reset" mat-raised-button color="primary">Reset</button>
+            </div>
+        </form>
+        <div class="container">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>studentId</th>
+                        <th>Name</th>
+                        <th>emailId</th>
+                        <th>phoneNumber</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="studentfetched">
+                        <td><span>{{studentfetched.studentId}}</span></td>
+                        <td><span>{{studentfetched.name}}</span></td>
+                        <td><span>{{studentfetched.emailId}}</span></td>
+                        <td><span>{{studentfetched.phoneNumber}}</span></td>
+
+
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
